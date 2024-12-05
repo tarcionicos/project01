@@ -12,6 +12,9 @@ jobs:
         run: npm ci
       - name: Test
         run: npm test
+  Lint:
+    runs-on: ubuntu latest
+    steps:
       - name: Lint
         run: npx eslint .
   
