@@ -15,6 +15,11 @@ jobs:
   Lint:
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install NodeJs
+        uses: actions/setup-node@v3
+      - name: Install Dependencies
       - name: Lint
         run: npx eslint .
   
