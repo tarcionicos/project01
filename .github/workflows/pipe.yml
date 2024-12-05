@@ -1,7 +1,7 @@
 name: Pipeline
-on: push
+on: [push, workflow_dispatch]
 jobs:
-  test:
+  Test:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
