@@ -23,4 +23,17 @@ jobs:
         run: npm ci
       - name: Lint
         run: npx eslint .
-  
+  Deploy:
+    needs: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout
+      - name: Install NodeJs
+        uses: actions/setup-node
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build
+        run: npm run Build
+      - name: Deploy
+        run: echo "deploying..."
